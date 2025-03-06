@@ -5,12 +5,17 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>FAQ - Kosmo</title>
 
-    <!-- Preconnect & Preload -->
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.7/iframeResizer.contentWindow.js"
-      as="script"
+    <!-- OG Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sanjidev7.github.io/faq-kosmo" />
+    <meta property="og:title" content="FAQ - Kosmo" />
+    <meta
+      property="og:description"
+      content="Preguntas frecuentes sobre Kosmo.<br>Test"
     />
+    <meta property="og:image:alt" content="FAQ - Kosmo" />
+
+    <!-- Preload Vue -->
     <link
       rel="preload"
       href="https://unpkg.com/vue@3/dist/vue.global.js"
@@ -22,12 +27,10 @@
         margin: 0;
         font: 400 18px/1.555 -apple-system, BlinkMacSystemFont, Roboto,
           Open Sans, Helvetica Neue, sans-serif;
-      }
-      body:not(.iframe) {
         padding: 60px 40px;
       }
       @media (max-width: 900px) {
-        body:not(.iframe) {
+        body {
           padding: 32px 20px;
         }
       }
@@ -51,12 +54,7 @@
     </style>
   </head>
   <body>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.7/iframeResizer.contentWindow.js"
-      async
-    ></script>
-
-    <!-- Vue container -->
+    <!-- Vue Accordion Component -->
     <div id="app">
       <div class="accordion">
         <div v-for="(faq, index) in faqs" :key="index" class="accordion-item">
@@ -70,7 +68,7 @@
       </div>
     </div>
 
-    <!-- Vue and Accordion Script -->
+    <!-- Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
       const { createApp } = Vue;
@@ -127,10 +125,6 @@
           },
         },
       }).mount("#app");
-    </script>
-
-    <script>
-      document.body.classList.toggle("iframe", window !== window.parent);
     </script>
   </body>
 </html>
