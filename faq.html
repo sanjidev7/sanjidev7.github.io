@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Kosmo</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .accordion {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+      }
+      .accordion-item {
+        border-bottom: 1px solid #ccc;
+      }
+      .accordion-header {
+        background: #f8f8f8;
+        padding: 15px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .accordion-content {
+        padding: 15px;
+        display: none;
+      }
+      .active .accordion-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="accordion">
+        <div
+          v-for="(faq, index) in faqs"
+          :key="index"
+          class="accordion-item"
+          :class="{ 'active': activeIndex === index }"
+        >
+          <div class="accordion-header" @click="toggle(index)">
+            {{ faq.question }}
+          </div>
+          <div class="accordion-content" v-show="activeIndex === index">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            activeIndex: null,
+            faqs: [
+              {
+                question: "¿Qué incluye el valor mensual de Kosmo?",
+                answer:
+                  "La mensualidad de Kosmo es de $50,000 pesos e incluye acceso ilimitado para colaboradores, creación de mesas, ventas y domicilios sin restricciones, envío de informes de ventas e inventario cada vez que se realice el cierre de caja, soporte 24/7 y actualizaciones continuas del software.",
+              },
+              {
+                question:
+                  "¿Qué sucede si no se realiza el pago mensual de Kosmo?",
+                answer:
+                  "Si no se realiza el pago mensual de Kosmo, se suspenderá temporalmente el acceso al software hasta que se regularice el pago. Una vez se confirme el pago, se reactivará el acceso sin pérdida de datos.",
+              },
+              {
+                question: "¿Cómo puedo instalar Kosmo en mi restaurante?",
+                answer:
+                  "Nuestro equipo te ayudará con el paso a paso de la instalación del software.",
+              },
+              {
+                question:
+                  "¿Es necesario instalar el software en los dispositivos de los meseros?",
+                answer:
+                  "No es necesario. Con instalar Kosmo en el computador de tu caja y que tus meseros se conecten a tu red wifi, ya es suficiente.",
+              },
+              {
+                question: "¿Kosmo es compatible con cualquier dispositivo?",
+                answer:
+                  "Sí, Kosmo funciona en cualquier navegador y es compatible con dispositivos como computadoras, teléfonos y tabletas.",
+              },
+              {
+                question:
+                  "¿Kosmo requiere una impresora específica para imprimir facturas y comandas?",
+                answer:
+                  "No, Kosmo se adapta a cualquier impresora de POS, por lo que no es necesario tener una impresora específica.",
+              },
+              {
+                question:
+                  "¿Es necesario contar con una buena conexión a internet para utilizar el software?",
+                answer:
+                  "No, Kosmo funciona perfectamente de manera offline. Si no hay conexión a internet, podrás seguir operando sin problemas. Sin embargo, los informes de ventas e inventario se enviarán por correo electrónico tan pronto la conexión a internet se restablezca.",
+              },
+            ],
+          };
+        },
+        methods: {
+          toggle(index) {
+            this.activeIndex = this.activeIndex === index ? null : index;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
