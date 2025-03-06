@@ -1,152 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>FAQ - Kosmo</title>
+    <title>Untitled FAQ</title>
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://yourdomain.com/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="https://yourdomain.com/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="https://yourdomain.com/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://universe-static.elfsightcdn.com/widget-page/elfsight-glyph-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://universe-static.elfsightcdn.com/widget-page/elfsight-glyph-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://universe-static.elfsightcdn.com/widget-page/elfsight-glyph-16x16.png"
+    />
 
-    <!-- OG Meta Tags -->
+    <!-- OG -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/faq-kosmo" />
-    <meta property="og:title" content="FAQ - Kosmo" />
-    <meta property="og:description" content="Preguntas frecuentes sobre Kosmo." />
-    <meta property="og:image" content="https://example.com/path/to/image.png" />
-    <meta property="og:image:alt" content="FAQ - Kosmo" />
+    <meta
+      property="og:url"
+      content="https://242edc1b3c32487caa655d6eee0c5d96.elf.site"
+    />
+    <meta property="og:title" content="Untitled FAQ" />
+    <meta
+      property="og:description"
+      content="Click the link to interact with FAQ"
+    />
+    <meta
+      property="og:image"
+      content="https://services-universe-prod.sfo3.digitaloceanspaces.com/widget-thumbnails/a83b1b22-d6b8-4275-ad59-08cf677880f0@2x.png"
+    />
+    <meta property="og:image:alt" content="Untitled FAQ" />
 
+    <!-- Preconnect & Preload -->
+    <link rel="preconnect" href="https://sanjidev7.github.io" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.7/iframeResizer.contentWindow.js"
+      as="script"
+    />
+    <link rel="preload" href="https://sanjidev7.github.io/faq.js" as="script" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+  </head>
+  <body style="">
     <style>
       body {
         margin: 0;
-        font: 400 18px/1.555 -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
-        padding: 0px;
+        font: 400 18px/1.555 -apple-system, BlinkMacSystemFont, Roboto,
+          Open Sans, Helvetica Neue, sans-serif;
+      }
+      body:not(.iframe) {
+        padding: 60px 40px;
       }
       @media (max-width: 900px) {
-        body {
+        body:not(.iframe) {
           padding: 32px 20px;
         }
       }
-      .accordion {
-        width: 100%;
-        max-width: 600px;
-        margin: auto;
-      }
-      .accordion-item {
-        border-bottom: 1px solid #ccc;
-        padding: 15px 0;
-      }
-      /* Hide radio inputs */
-      .accordion-item input[type="radio"] {
-        display: none;
-      }
-      .accordion-header {
-        font-weight: bold;
-        cursor: pointer;
-        display: block;
-        transition: color 0.3s ease;
-      }
-      /* Change header color when its radio is checked */
-      .accordion-item input[type="radio"]:checked + label {
-        color: #007BFF;
-      }
-      .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: max-height 0.4s ease, opacity 0.4s ease;
-      }
-      /* Show content when its radio is checked */
-      .accordion-item input[type="radio"]:checked + label + .accordion-content {
-        max-height: 500px; /* adjust if needed */
-        opacity: 1;
-        margin-top: 10px;
-      }
     </style>
-  </head>
-  <body>
-    <div class="accordion">
-      <!-- Dummy radio to have all closed by default -->
-      <input type="radio" name="accordion" id="none" checked hidden />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.7/iframeResizer.contentWindow.js"
+      async
+    ></script>
+    <script>
+      window.eappsCustomPlatformUrl = "https://sanjidev7.github.io";
+    </script>
 
-      <div class="accordion-item">
-        <input type="radio" name="accordion" id="faq1" hidden />
-        <label class="accordion-header" for="faq1">¿Qué incluye el valor mensual de Kosmo?</label>
-        <div class="accordion-content">
-          <p>
-            La mensualidad de Kosmo es de $50,000 pesos e incluye acceso ilimitado para colaboradores,
-            creación de mesas, ventas y domicilios sin restricciones, envío de informes de ventas e inventario
-            cada vez que se realice el cierre de caja, soporte 24/7 y actualizaciones continuas del software.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <input type="radio" name="accordion" id="faq2" hidden />
-        <label class="accordion-header" for="faq2">¿Qué sucede si no se realiza el pago mensual de Kosmo?</label>
-        <div class="accordion-content">
-          <p>
-            Si no se realiza el pago mensual de Kosmo, se suspenderá temporalmente el acceso al software hasta
-            que se regularice el pago. Una vez se confirme el pago, se reactivará el acceso sin pérdida de datos.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <input type="radio" name="accordion" id="faq3" hidden />
-        <label class="accordion-header" for="faq3">¿Cómo puedo instalar Kosmo en mi restaurante?</label>
-        <div class="accordion-content">
-          <p>
-            Nuestro equipo te ayudará con el paso a paso de la instalación del software.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <input type="radio" name="accordion" id="faq4" hidden />
-        <label class="accordion-header" for="faq4">¿Es necesario instalar el software en los dispositivos de los meseros?</label>
-        <div class="accordion-content">
-          <p>
-            No es necesario. Con instalar Kosmo en el computador de tu caja y que tus meseros se conecten a
-            tu red wifi, ya es suficiente.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <input type="radio" name="accordion" id="faq5" hidden />
-        <label class="accordion-header" for="faq5">¿Kosmo es compatible con cualquier dispositivo?</label>
-        <div class="accordion-content">
-          <p>
-            Sí, Kosmo funciona en cualquier navegador y es compatible con dispositivos como computadoras, teléfonos
-            y tabletas.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <input type="radio" name="accordion" id="faq6" hidden />
-        <label class="accordion-header" for="faq6">¿Kosmo requiere una impresora específica para imprimir facturas y comandas?</label>
-        <div class="accordion-content">
-          <p>
-            No, Kosmo se adapta a cualquier impresora de POS, por lo que no es necesario tener una impresora específica.
-          </p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <input type="radio" name="accordion" id="faq7" hidden />
-        <label class="accordion-header" for="faq7">¿Es necesario contar con una buena conexión a internet para utilizar el software?</label>
-        <div class="accordion-content">
-          <p>
-            No, Kosmo funciona perfectamente de manera offline. Si no hay conexión a internet, podrás seguir operando
-            sin problemas. Sin embargo, los informes de ventas e inventario se enviarán por correo electrónico tan pronto
-            la conexión a internet se restablezca.
-          </p>
-        </div>
-      </div>
-    </div>
+    <script>
+      document.body.classList.toggle("iframe", window !== window.parent);
+    </script>
   </body>
 </html>
