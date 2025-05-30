@@ -94,23 +94,24 @@ Soporte
 kosmopos.co
 </a> </li> </ul> </div> </div> <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"> <p class="text-gray-400 text-sm">
 © 2025 Kosmo POS. Todos los derechos reservados.
-</p> <div class="flex space-x-6 mt-4 md:mt-0">  </div> </div> </div> </footer> </div>  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK9W8CNMBX"></script> <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+</p> <div class="flex space-x-6 mt-4 md:mt-0">  </div> </div> </div> </footer> </div>  <!-- Google tag (gtag.js) --> <script>
+      function initGoogleAnalytics() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        // Use requestIdleCallback if available to defer GA config until browser is idle
+        if (window.requestIdleCallback) {
+          requestIdleCallback(function () {
+            gtag("js", new Date());
+            gtag("config", "G-YK9W8CNMBX");
+          });
+        } else {
+          // Fallback for browsers without requestIdleCallback
+          setTimeout(function () {
+            gtag("js", new Date());
+            gtag("config", "G-YK9W8CNMBX");
+          }, 200);
+        }
       }
-
-      // Use requestIdleCallback if available to defer GA config until browser is idle
-      if (window.requestIdleCallback) {
-        requestIdleCallback(function () {
-          gtag("js", new Date());
-          gtag("config", "G-YK9W8CNMBX");
-        });
-      } else {
-        // Fallback for browsers without requestIdleCallback
-        setTimeout(function () {
-          gtag("js", new Date());
-          gtag("config", "G-YK9W8CNMBX");
-        }, 200);
-      }
-    </script> </body> </html>
+    </script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK9W8CNMBX" onload="initGoogleAnalytics()"></script> </body> </html>
