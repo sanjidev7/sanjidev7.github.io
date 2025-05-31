@@ -69,6 +69,20 @@ kosmopos.co
         }
       }
     </script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK9W8CNMBX" onload="initGoogleAnalytics()"></script> <script async type="text/javascript">
+      const urlParams = new URLSearchParams(window.location.search);
+      const skipQueryParam = urlParams.get("skip");
+      if (skipQueryParam === "true") {
+        localStorage.setItem("skip", "true");
+      }
+
+      const skip =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1" ||
+        localStorage.getItem("skip") === "true";
+
+      if (skip) {
+        return;
+      }
       (function (c, l, a, r, i, t, y) {
         c[a] =
           c[a] ||
