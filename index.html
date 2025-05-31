@@ -96,6 +96,19 @@ kosmopos.co
 © 2025 Kosmo POS. Todos los derechos reservados.
 </p> <div class="flex space-x-6 mt-4 md:mt-0">  </div> </div> </div> </footer> </div>  <!-- Google tag (gtag.js) --> <script>
       function initGoogleAnalytics() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const skipQueryParam = urlParams.get("skip");
+        if (skipQueryParam === "true") {
+          localStorage.setItem("skip", "true");
+        }
+
+        const skip =
+          window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1" ||
+          localStorage.getItem("skip") === "true";
+        if (skip) {
+          return;
+        }
         window.dataLayer = window.dataLayer || [];
         function gtag() {
           dataLayer.push(arguments);
