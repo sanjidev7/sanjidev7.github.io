@@ -5,4 +5,4 @@ Allow: /
 # Disallow: /private/
 
 # Sitemap location
-Sitemap: https://kosmopos.com/sitemap.xml
+Sitemap: https://kosmopos.co/sitemap.xml
