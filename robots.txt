@@ -1,8 +1,47 @@
+# Global rules for all crawlers
 User-agent: *
 Allow: /
 
-# Block access to specific files or directories if needed
-# Disallow: /private/
+# Optimize crawl rate for standard crawlers
+Crawl-delay: 5
 
-# Sitemap location
+# Block access to specific files or directories
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /node_modules/
+Disallow: /.github/
+Disallow: /.git/
+Disallow: /.kiro/
+Disallow: /dist/
+Disallow: /~partytown/
+
+# Allow important directories explicitly
+Allow: /blog/
+Allow: /images/
+Allow: /videos/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Specific rules for Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /public/images/
+Allow: /videos/
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 10
+
+# Sitemap references for different content types
 Sitemap: https://kosmopos.co/sitemap.xml
+Sitemap: https://kosmopos.co/sitemap-index.xml
+
+# Host directive to specify preferred domain
+Host: kosmopos.co
+
+# Clean-param directive to avoid duplicate content
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term /blog/
