@@ -39,6 +39,7 @@ Crawl-delay: 10
 # Sitemap references for different content types
 Sitemap: https://kosmopos.co/sitemap.xml
 Sitemap: https://kosmopos.co/sitemap-index.xml
+Sitemap: https://kosmopos.co/video-sitemap.xml
 
 # Host directive to specify preferred domain
 Host: kosmopos.co
