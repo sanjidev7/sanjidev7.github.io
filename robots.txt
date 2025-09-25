@@ -36,6 +36,24 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 10
 
+# --- LLM / AI crawlers: explicit allow ---
+User-agent: GPTBot
+Allow: /
+
+# ChatGPT's browsing agent (used when users browse via ChatGPT)
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Common Crawl (often used downstream by AI services)
+User-agent: CCBot
+Allow: /
+
 # Sitemap references for different content types
 Sitemap: https://kosmopos.co/sitemap.xml
 Sitemap: https://kosmopos.co/sitemap-index.xml
