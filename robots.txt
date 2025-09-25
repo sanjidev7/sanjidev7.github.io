@@ -1,66 +1,20 @@
-# Global rules for all crawlers
+# Global allow
 User-agent: *
 Allow: /
-
-# Optimize crawl rate for standard crawlers
-Crawl-delay: 5
-
-# Block access to specific files or directories
-Disallow: /assets/js/
-Disallow: /assets/css/
-Disallow: /node_modules/
-Disallow: /.github/
-Disallow: /.git/
-Disallow: /.kiro/
-Disallow: /dist/
-Disallow: /~partytown/
-
-# Allow important directories explicitly
-Allow: /blog/
-Allow: /images/
-Allow: /videos/
-
-# Specific rules for Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Specific rules for Googlebot-Image
-User-agent: Googlebot-Image
-Allow: /images/
-Allow: /public/images/
-Allow: /videos/
-
-# Specific rules for Bingbot
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 10
 
 # --- LLM / AI crawlers: explicit allow ---
 User-agent: GPTBot
 Allow: /
-
-# ChatGPT's browsing agent (used when users browse via ChatGPT)
 User-agent: ChatGPT-User
 Allow: /
-
-# Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
 User-agent: anthropic-ai
 Allow: /
-
-# Common Crawl (often used downstream by AI services)
 User-agent: CCBot
 Allow: /
 
-# Sitemap references for different content types
+# Sitemaps
 Sitemap: https://kosmopos.co/sitemap.xml
 Sitemap: https://kosmopos.co/sitemap-index.xml
 Sitemap: https://kosmopos.co/video-sitemap.xml
-
-# Host directive to specify preferred domain
-Host: kosmopos.co
-
-# Clean-param directive to avoid duplicate content
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term /blog/
