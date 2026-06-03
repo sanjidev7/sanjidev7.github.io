@@ -1,0 +1,1 @@
+import{g as n}from"./amplitude.BlNHlJ0G.js";import"./commonjsHelpers.CqkleIqs.js";if(!window.__variantResolved){const o=setTimeout(()=>window.__showVariant("control"),1e3);n("new-landing-test").then(t=>{clearTimeout(o),window.__showVariant(t||"control")}).catch(()=>{clearTimeout(o),window.__showVariant("control")})}
