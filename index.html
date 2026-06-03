@@ -182,4 +182,35 @@ Hecho con ❤️ en Colombia
           y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "rrhg0epadr");
       }
-    </script> <a href="/llms.txt" class="hidden">For AI assistants</a> </body></html> <script type="module" src="/./assets/index.astro_astro_type_script_index_0_lang.BKMaoCSb.js"></script>
+    </script> <a href="/llms.txt" class="hidden">For AI assistants</a> </body></html> <script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var forceVariant = params.get("variant");
+
+    function showVariant(variant) {
+      var loading = document.getElementById("variant-loading");
+      var control = document.getElementById("variant-control");
+      var treatment = document.getElementById("variant-treatment");
+
+      if (loading) loading.classList.add("hidden");
+
+      if (variant === "treatment") {
+        if (treatment) treatment.classList.remove("hidden");
+      } else {
+        if (control) control.classList.remove("hidden");
+      }
+    }
+
+    if (forceVariant === "control" || forceVariant === "treatment") {
+      showVariant(forceVariant);
+      window.__variantResolved = true;
+    }
+
+    // Comprobante redirect
+    if (params.get("comprobante") === "enviar") {
+      window.location.href = "https://api.whatsapp.com/send?phone=573043232171&text=Hola,%20equipo%20Kosmo.%20Hago%20envio%20del%20comprobante%20de%20pago";
+    }
+
+    window.__showVariant = showVariant;
+  })();
+</script> <script type="module" src="/./assets/index.astro_astro_type_script_index_0_lang.BDDB9fuv.js"></script>
